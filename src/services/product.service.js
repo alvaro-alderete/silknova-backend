@@ -10,7 +10,7 @@ const getAll = async ({ page = 1, limit = 15, categoria, genero, destacado, busq
 
   const skip = (page - 1) * limit;
   const total = await Product.countDocuments(filtro);
-const productos = await Product.find(filtro)
+  const productos = await Product.find(filtro)
     .populate("categoria", "nombre urlNombre")
     .skip(skip)
     .limit(Number(limit))
